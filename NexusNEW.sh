@@ -5,4 +5,4 @@ tar -zxvf nexus-3.79.1-04-linux-x86_64.tar.gz
 useradd nexus
 chown -R nexus:nexus nexus-3.79.1-04 sonatype-work
 cd nexus-3.79.1-04/bin/
-vi nexus
+sudo echo "run_as_user="nexus"" > /opt/nexus-3.79.1-04/bin/
