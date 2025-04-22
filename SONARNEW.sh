@@ -5,8 +5,8 @@ wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-8.9.6.508
 unzip sonarqube-8.9.6.50800.zip
 sudo yum install java-17-amazon-corretto -y
 useradd sonar
-chown sonar:sonar sonarqube-8.9.6.50800 -R
-chmod 777 sonarqube-8.9.6.50800 -R
+chown -R sonar:sonar sonarqube-8.9.6.50800 
+chmod 777 -R sonarqube-8.9.6.50800
 su - sonar
 cd /opt/sonarqube-8.9.6.50800
 cd /bin/linux-x86-64
