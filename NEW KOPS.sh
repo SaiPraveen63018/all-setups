@@ -16,5 +16,9 @@ curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stabl
 chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
+export KOPS_STATE_STORE=s3://praveen63.k8s
+kops create cluster --name praveen.k8s.local --zones us-east-1a,us-east-1b,us-east-1c --master-count=1 --master-size t2.large --master-volume-size 30 --node-count=2 --node-size t2.medium --node-volume-size 20 
+kops update cluster --name praveen.k8s.local --yes --admin
 
-kops create cluster --name praveen.k8s.local --zones us-east-1a,us-east-1b,us-east-1c --control-plane-count=1 --control-plane-size t2.medium --control-plane-volume-size 30 --node-count=2 --node-size t2.micro --node-volume-size 30 
+
+
