@@ -17,7 +17,7 @@ chmod +x kubectl
 sudo mv kubectl /usr/local/bin/
 
 export KOPS_STATE_STORE=s3://saipraveen34.k8s
-kops create cluster --name praveen.k8s.local --zones us-east-1a,us-east-1b,us-east-1c --master-count=1 --master-size t2.large --master-volume-size 30 --node-count=2 --node-size t2.medium --node-volume-size 20 
+kops create cluster --name praveen.k8s.local --zones us-east-1a,us-east-1b,us-east-1c --master-count=1 --master-size t2.large --master-volume-size 30 --node-count=2 --node-size t2.medium --node-volume-size 20 --image ami-020cba7c55df1f615
 kops update cluster --name praveen.k8s.local --yes --admin
 
 
